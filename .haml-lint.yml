@@ -1,0 +1,34 @@
+linters:
+  InlineStyles: { enabled: false }
+  LineLength: { enabled: true, max: 150 }
+  MultilinePipe: { enabled: false }
+  ConsecutiveComments: { enabled: false }
+  IdNames: { enabled: false }
+  ClassAttributeWithStaticValue: { enabled: true }
+  FinalNewline: { enabled: true }
+  HtmlAttributes: { enabled: true }
+  ImplicitDiv: { enabled: true }
+
+  RuboCop:
+    enabled: true
+    ignored_cops:
+      - Layout/AlignHash
+      - Layout/AlignParameters
+      - Layout/ElseAlignment
+      - Layout/EndOfLine
+      - Layout/IndentationWidth
+      - Layout/TrailingEmptyLines
+      - Layout/TrailingWhitespace
+      - Lint/BlockAlignment
+      - Lint/EndAlignment
+      - Lint/Void
+      - Metrics/BlockLength
+      - Metrics/BlockNesting
+      - Naming/FileName
+      - Style/FrozenStringLiteralComment
+      - Style/IfUnlessModifier
+      - Style/Next
+      - Style/WhileUntilModifier
+
+  SpaceInsideHashAttributes: { enabled: true, style: space }
+  ViewLength: { enabled: true, max: 150 }
