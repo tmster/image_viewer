@@ -29,6 +29,9 @@ gem 'jbuilder', '~> 2.7'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
+gem 'graphiql-rails'
+gem 'graphql', '~> 1.9'
+gem 'graphql-batch'
 gem 'haml-rails', '~> 2.0'
 gem 'haml_lint', require: false
 gem 'rubocop'
