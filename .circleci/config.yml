@@ -1,0 +1,83 @@
+# Ruby CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-ruby/ for more details
+#
+version: 2
+jobs:
+  build:
+    docker:
+      # specify the version you desire here
+      - image: circleci/ruby:2.7.0-node-browsers
+        environment:
+          RAILS_ENV: test
+          BUNDLE_PATH: vendor/bundle
+          BUNDLE_JOBS: 4
+          DISABLE_SPRING: 1
+          COVERAGE: 1
+          PGHOST: 127.0.0.1
+          PGUSER: postgres
+
+
+      - image: circleci/postgres:11
+        environment:
+          POSTGRES_DB: image_viewer_test
+          POSTGRES_USER: postgres
+
+    working_directory: ~/repo
+
+    steps:
+      - checkout
+
+      - run:
+          name: Wait for Postgres
+          command: dockerize -wait tcp://localhost:5432 -timeout 1m
+
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "Gemfile.lock" }}
+            - v1-dependencies-
+
+      - run:
+          name: install dependencies
+          command: |
+            bundle install --jobs=4 --retry=3 --path vendor/bundle
+
+      - save_cache:
+          paths:
+            - ./vendor/bundle
+          key: v1-dependencies-{{ checksum "Gemfile.lock" }}
+
+      - run:
+          name: Yarn install
+          command: yarn install --cache-folder ~/.cache/yarn
+
+      - save_cache:
+          paths:
+            - ~/.cache/yarn
+          key: webapp-yarn-v1-dependencies-{{ checksum "yarn.lock" }}
+
+      - run: bundle exec rake db:create
+      - run: bundle exec rake db:schema:load
+      - run: bundle exec rubocop
+      - run: bundle exec haml-lint -c .haml-lint.yml
+
+      - run:
+          name: run tests
+          command: |
+            mkdir /tmp/test-results
+            TEST_FILES="$(circleci tests glob "spec/**/*_spec.rb" | \
+              circleci tests split --split-by=timings)"
+
+            bundle exec rspec \
+              --format progress \
+              --format RspecJunitFormatter \
+              --out /tmp/test-results/rspec.xml \
+              --format progress \
+              $TEST_FILES
+
+      # collect reports
+      - store_test_results:
+          path: /tmp/test-results
+      - store_artifacts:
+          path: /tmp/test-results
+          destination: test-results
