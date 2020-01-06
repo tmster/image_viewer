@@ -30,10 +30,10 @@ gem 'jbuilder', '~> 2.7'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'haml-rails', '~> 2.0'
+gem 'haml_lint', require: false
 gem 'rubocop'
 gem 'rubocop-rails'
 gem 'rubocop-rspec'
-gem 'haml_lint', require: false
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -42,7 +42,7 @@ group :development, :test do
 end
 
 group :test do
-  gem 'factory_bot'
+  gem 'factory_bot_rails'
   gem 'shoulda-matchers'
 end
 
