@@ -1,24 +1,21 @@
-# README
+# ImageViewer
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Running
 
-Things you may want to cover:
+- Ensure `hivemind` is running
 
-* Ruby version
+## Developing with react-rails
 
-* System dependencies
+Read [the docs](https://github.com/reactjs/react-rails). All helpers are available and so is ES6 syntax.
+Components go in `app/javascript/components`
 
-* Configuration
+## Testing
 
-* Database creation
+- Rails: `bundle exec rspec'
+- React: `yarn test`
 
-* Database initialization
+## Linting
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- Rails: `bundle exec rubocop`
+- Haml: `bundle exec haml-lint -c .haml-lint.yml`
+- React: `yarn run lint`

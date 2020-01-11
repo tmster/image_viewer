@@ -34,6 +34,7 @@ gem 'graphql', '~> 1.9'
 gem 'graphql-batch'
 gem 'haml-rails', '~> 2.0'
 gem 'haml_lint', require: false
+gem 'react-rails'
 gem 'rubocop'
 gem 'rubocop-rails'
 gem 'rubocop-rspec'

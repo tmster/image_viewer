@@ -17,7 +17,6 @@ jobs:
           PGHOST: 127.0.0.1
           PGUSER: postgres
 
-
       - image: circleci/postgres:11
         environment:
           POSTGRES_DB: image_viewer_test
@@ -60,7 +59,10 @@ jobs:
       - run: bundle exec rake db:schema:load
       - run: bundle exec rubocop
       - run: bundle exec haml-lint -c .haml-lint.yml
-
+      - run: yarn lint
+      - run:
+          name: Run JS tests
+          command: yarn test
       - run:
           name: run tests
           command: |
