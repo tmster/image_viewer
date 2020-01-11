@@ -9,6 +9,7 @@ AllCops:
     - node_modules/**/*
     - db/schema.rb
     - vendor/**/*
+    - config/initializers/active_storage_patch.rb
 
 Capybara/FeatureMethods:
   EnabledMethods:

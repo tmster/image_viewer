@@ -5,16 +5,19 @@ module Types
     field :id, ID, null: false
     field :title, String, null: false
     field :description, String, null: true
-    field :image_url, String, null: true
+    field :image_url, String, null: true do
+      argument :variant, ImageVariantEnum, required: false
+    end
 
-    def image_url
+    def image_url(variant: nil)
       AssociationLoader.for(
         object.class,
         image_attachment: :blob
       ).load(object).then do |image|
         next if image.nil?
 
-        Rails.application.routes.url_helpers.rails_blob_url(image)
+        image = image.variant(variant) if variant
+        Rails.application.routes.url_helpers.url_for(image)
       end
     end
   end
