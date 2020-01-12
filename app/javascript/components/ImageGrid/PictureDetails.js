@@ -10,11 +10,12 @@ function PictureDetails(props) {
         <img className="img-fluid" src={imageUrl} alt={title} />
       </div>
       <div className="col-lg-3 col-md-3 col-sm-12 col-xs-12 image-grid__details">
-        <h2>{id}</h2>
+        <h2>#{id}</h2>
         <h5>{title}</h5>
         <p>{description}</p>
         <Link to="/" className="image-grid__close" />
       </div>
+      <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 flex-grow-1 image-grid__footer"></div>
     </div>
   );
 }

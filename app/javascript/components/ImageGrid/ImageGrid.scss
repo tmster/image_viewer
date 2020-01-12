@@ -8,6 +8,12 @@
     padding-right: 30px;
     padding-top: 30px;
   }
+
+  &__footer {
+    height: 100vh;
+    background: #111;
+  }
+
   &__close {
     position: absolute;
     right: 30px;
@@ -16,9 +22,11 @@
     height: 30px;
     opacity: 0.3;
   }
+
   &__close:hover {
     opacity: 1;
   }
+
   &__close::before,
   &__close::after {
     position: absolute;
@@ -28,9 +36,11 @@
     width: 2px;
     background-color: #333;
   }
+
   &__close::before {
     transform: rotate(45deg);
   }
+
   &__close::after {
     transform: rotate(-45deg);
   }

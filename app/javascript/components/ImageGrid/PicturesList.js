@@ -26,7 +26,7 @@ class PicturesList extends React.Component {
         <InfiniteScroll
           loadMore={this.props.onLoadMore.bind(this)}
           hasMore={this.props.hasMorePictures}
-          useWindow={false}
+          useWindow={true}
         >
           {this.showItems()}
         </InfiniteScroll>
