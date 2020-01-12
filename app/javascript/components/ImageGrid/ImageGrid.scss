@@ -1,4 +1,37 @@
-.image-grid__card {
-  padding: 0;
-  margin: 2px;
+.image-grid {
+  &__card {
+    padding: 0;
+    margin: 2px;
+  }
+
+  &__details {
+    padding-right: 30px;
+    padding-top: 30px;
+  }
+  &__close {
+    position: absolute;
+    right: 30px;
+    top: 15px;
+    width: 30px;
+    height: 30px;
+    opacity: 0.3;
+  }
+  &__close:hover {
+    opacity: 1;
+  }
+  &__close::before,
+  &__close::after {
+    position: absolute;
+    left: 15px;
+    content: ' ';
+    height: 33px;
+    width: 2px;
+    background-color: #333;
+  }
+  &__close::before {
+    transform: rotate(45deg);
+  }
+  &__close::after {
+    transform: rotate(-45deg);
+  }
 }

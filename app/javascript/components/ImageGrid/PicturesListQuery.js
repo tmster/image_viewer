@@ -3,7 +3,7 @@ import { Query } from 'react-apollo';
 import gql from 'graphql-tag';
 import PicturesList from './PicturesList';
 
-const PictureQuery = gql`
+const PicturesQuery = gql`
   query pictures($offset: Int) {
     pictures(limit: 20, offset: $offset) {
       id
@@ -15,7 +15,7 @@ const PictureQuery = gql`
 
 const PicturesListQuery = () => {
   return (
-    <Query query={PictureQuery}>
+    <Query query={PicturesQuery}>
       {({ data, fetchMore }) => {
         return (
           <div key={0}>
