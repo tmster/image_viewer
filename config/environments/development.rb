@@ -14,8 +14,8 @@ Rails.application.configure do
   # Show full error reports.
   config.consider_all_requests_local = true
 
-  config.action_controller.default_url_options = { host: 'localhost', port: 3000 }
-  routes.default_url_options = { host: 'localhost', port: 3000 }
+  config.action_controller.default_url_options = { host: 'localhost', port: 5000 }
+  routes.default_url_options = { host: 'localhost', port: 5000 }
 
   # Enable/disable caching. By default caching is disabled.
   # Run rails dev:cache to toggle caching.

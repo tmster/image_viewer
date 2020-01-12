@@ -1,7 +1,5 @@
 thumb:
-  convert: jpg
   resize_to_fill: [64, 64]
 
 medium:
-  convert: jpg
   resize_to_fill: [200, 200]

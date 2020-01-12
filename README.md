@@ -2,6 +2,7 @@
 
 ## Running
 
+- Make sure you have nstalled [vips](https://libvips.github.io/libvips/install.html)
 - Ensure `hivemind` is running
 
 ## Developing with react-rails
