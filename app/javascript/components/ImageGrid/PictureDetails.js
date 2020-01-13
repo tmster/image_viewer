@@ -5,9 +5,13 @@ import { Link } from 'react-router-dom';
 function PictureDetails(props) {
   const { imageUrl, title, description, id } = props;
   return (
-    <div className="row">
-      <div className="col-lg-9 col-md-9 col-sm-12 col-xs-12">
-        <img className="img-fluid" src={imageUrl} alt={title} />
+    <div className="row image-grid__overlay">
+      <div className="col-lg-9 col-md-9 col-sm-12 col-xs-12 image-grid__image-overlay">
+        <img
+          className="img-fluid image-grid__image"
+          src={imageUrl}
+          alt={title}
+        />
       </div>
       <div className="col-lg-3 col-md-3 col-sm-12 col-xs-12 image-grid__details">
         <h2>#{id}</h2>
@@ -15,7 +19,6 @@ function PictureDetails(props) {
         <p>{description}</p>
         <Link to="/" className="image-grid__close" />
       </div>
-      <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 flex-grow-1 image-grid__footer"></div>
     </div>
   );
 }

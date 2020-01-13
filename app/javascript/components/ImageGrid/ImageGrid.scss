@@ -1,3 +1,7 @@
+@import '~bootstrap/scss/_functions.scss';
+@import '~bootstrap/scss/_variables.scss';
+@import '~bootstrap/scss/mixins/_breakpoints.scss';
+
 .image-grid {
   &__card {
     padding: 0;
@@ -7,9 +11,32 @@
   &__details {
     padding-right: 30px;
     padding-top: 30px;
+    background: #fff;
   }
 
-  &__footer {
+  &__image-overlay {
+    height: 100%;
+    width: 100%;
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    padding-right: 0;
+  }
+
+  &__image {
+    max-height: 100%;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+
+  &__overlay {
     height: 100vh;
     background: #111;
   }
@@ -43,5 +70,27 @@
 
   &__close::after {
     transform: rotate(-45deg);
+  }
+}
+
+@include media-breakpoint-up(xs) {
+  .image-grid {
+    &__details {
+      padding-left: 30px;
+    }
+  }
+}
+@include media-breakpoint-up(sm) {
+  .image-grid {
+    &__details {
+      padding-left: 30px;
+    }
+  }
+}
+@include media-breakpoint-up(md) {
+  .image-grid {
+    &__details {
+      padding-left: 30px;
+    }
   }
 }

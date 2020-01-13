@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Column from './Column';
+import Card from './Card';
 
 function Row(props) {
   return (
     <div className="row image-grid__row">
       {props.group.map(({ id, imageUrl, title }) => (
-        <Column key={id} id={id} imageUrl={imageUrl} title={title} />
+        <Card key={id} id={id} imageUrl={imageUrl} title={title} />
       ))}
     </div>
   );
