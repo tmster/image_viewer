@@ -44,7 +44,7 @@ const createLinkWithToken = () =>
   );
 
 // log erors
-const logError = error => console.error(error);
+const logError = error => console.error(error); // eslint-disable-line no-console
 // create error link
 const createErrorLink = () =>
   onError(({ graphQLErrors, networkError, operation }) => {

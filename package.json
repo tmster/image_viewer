@@ -3,7 +3,7 @@
   "scripts": {
     "test:lint:js": "eslint --ext=js,jsx ./app/javascript",
     "test:lint:prettier": "prettier -c app/javascript/**/*.js",
-    "test:lint:css": "stylelint --config=.stylelintrc 'app/javascript/**/*.{css,scss}'",
+    "test:lint:css": "stylelint --config=.stylelintrc 'app/stylesheets/**/*.{css,scss}'",
     "test": "jest",
     "lint": "run-s test:lint:**",
     "eslint:fix": "eslint --ext=js,jsx --fix ./app/javascript",

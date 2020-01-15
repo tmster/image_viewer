@@ -17,34 +17,10 @@ const PicturesListQuery = () => {
   return (
     <Query query={PicturesQuery}>
       {({ data, fetchMore }) => {
-        return (
-          <div key={0}>
-            {data ? (
-              <PicturesList
-                pictures={data.pictures || []}
-                hasMorePictures={true}
-                onLoadMore={() =>
-                  fetchMore({
-                    variables: {
-                      offset: data.pictures.length,
-                    },
-                    updateQuery: (prev, { fetchMoreResult }) => {
-                      if (!fetchMoreResult) return prev;
-                      return {
-                        ...prev,
-                        pictures: [
-                          ...prev.pictures,
-                          ...fetchMoreResult.pictures,
-                        ],
-                      };
-                    },
-                  })
-                }
-              />
-            ) : (
-              'Initializing...'
-            )}
-          </div>
+        return data ? (
+          <PicturesList pictures={data.pictures || []} fetchMore={fetchMore} />
+        ) : (
+          <div>Initializing...</div>
         );
       }}
     </Query>

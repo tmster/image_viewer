@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import './ImageGrid.scss';
+import '../../../stylesheets/ImageGrid.scss';
 import Provider from '../Provider';
 import PicturesListQuery from './PicturesListQuery';
 import PictureDetailsQuery from './PictureDetailsQuery';

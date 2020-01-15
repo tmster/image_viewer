@@ -21,19 +21,10 @@ const PictureDetailsQuery = () => {
   return (
     <Query query={PicturesQuery} variables={{ id: parseInt(imageId, 10) }}>
       {({ data }) => {
-        return (
-          <div key={0}>
-            {data ? (
-              <PictureDetails
-                id={data.picture.id}
-                title={data.picture.title}
-                description={data.picture.description}
-                imageUrl={data.picture.imageUrl}
-              />
-            ) : (
-              'Initializing...'
-            )}
-          </div>
+        return data ? (
+          <PictureDetails {...data.picture} />
+        ) : (
+          <div>Initializing...</div>
         );
       }}
     </Query>
