@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 
 # rubocop:disable RSpec/DescribeClass
 RSpec.describe 'GraphQL Picture query', graphql: true do
@@ -18,18 +19,18 @@ RSpec.describe 'GraphQL Picture query', graphql: true do
     QUERY
   end
 
+  let!(:picture) { create :picture }
+  let(:variables) { { id: picture.id } }
+
   # FIXME: Transactions doesnt work to clean after specs
   after do
     picture.destroy
   end
 
-  let!(:picture) { create :picture }
-  let(:variables) { { id: picture.id } }
-
   describe 'find picture' do
     it 'returns proper picture' do
       expect(result['data']['picture']).to eq(
-          { 'id' => picture.id.to_s },
+        'id' => picture.id.to_s
       )
     end
   end
