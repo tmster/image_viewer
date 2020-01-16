@@ -9,7 +9,7 @@ module Resolvers
     type [Types::PictureType], null: false
 
     def resolve(limit: 20, offset: nil)
-      Picture.offset(offset).limit(limit)
+      Picture.order(created_at: :desc).offset(offset).limit(limit)
     end
   end
 end
