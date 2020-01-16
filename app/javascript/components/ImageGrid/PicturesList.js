@@ -46,7 +46,7 @@ class PicturesList extends React.Component {
   groupedPictures(n = 4) {
     const { pictures } = this.state;
     const group = [];
-    for (let i = 0, end = pictures.length / n; i <= end; i += 1)
+    for (let i = 0, end = pictures.length / n; i < end; i += 1)
       group.push(pictures.slice(i * n, (i + 1) * n));
     return group;
   }

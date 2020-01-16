@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders all props 1`] = `
+<div
+  className="row image-grid__row"
+>
+  <Card
+    id="1"
+    imageUrl="http://localhost/1"
+    key="1"
+    title="Awesome"
+  />
+  <Card
+    id="2"
+    imageUrl="http://localhost/2"
+    key="2"
+    title="Poor"
+  />
+</div>
+`;

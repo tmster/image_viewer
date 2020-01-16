@@ -1,0 +1,79 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`groups pictures 1`] = `
+<div
+  className="container image-grid"
+>
+  <InfiniteScroll
+    element="div"
+    getScrollParent={null}
+    hasMore={true}
+    initialLoad={true}
+    isReverse={false}
+    loadMore={[Function]}
+    loader={null}
+    pageStart={0}
+    ref={null}
+    threshold={250}
+    useCapture={false}
+    useWindow={true}
+  >
+    <Row
+      group={
+        Array [
+          Object {
+            "id": "1",
+            "imageUrl": "http://localhost/1",
+            "title": "Awesome",
+          },
+          Object {
+            "id": "2",
+            "imageUrl": "http://localhost/2",
+            "title": "Poor",
+          },
+        ]
+      }
+      key="0"
+    />
+  </InfiniteScroll>
+</div>
+`;
+
+exports[`renders all props 1`] = `
+<div
+  className="container image-grid"
+>
+  <InfiniteScroll
+    element="div"
+    getScrollParent={null}
+    hasMore={true}
+    initialLoad={true}
+    isReverse={false}
+    loadMore={[Function]}
+    loader={null}
+    pageStart={0}
+    ref={null}
+    threshold={250}
+    useCapture={false}
+    useWindow={true}
+  >
+    <Row
+      group={
+        Array [
+          Object {
+            "id": "1",
+            "imageUrl": "http://localhost/1",
+            "title": "Awesome",
+          },
+          Object {
+            "id": "2",
+            "imageUrl": "http://localhost/2",
+            "title": "Poor",
+          },
+        ]
+      }
+      key="0"
+    />
+  </InfiniteScroll>
+</div>
+`;

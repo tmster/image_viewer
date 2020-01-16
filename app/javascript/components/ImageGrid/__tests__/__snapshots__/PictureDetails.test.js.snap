@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders all props 1`] = `
+<div
+  className="row image-grid__overlay"
+>
+  <div
+    className="col-lg-9 col-md-9 col-sm-12 col-xs-12 image-grid__image-overlay"
+  >
+    <img
+      alt="Test"
+      className="img-fluid image-grid__image"
+      src="http://localhost"
+    />
+  </div>
+  <div
+    className="col-lg-3 col-md-3 col-sm-12 col-xs-12 image-grid__details"
+  >
+    <h2>
+      #
+      0
+    </h2>
+    <h5>
+      Test
+    </h5>
+    <p>
+      Very awesome description
+    </p>
+    <Link
+      className="image-grid__close"
+      to="/"
+    />
+  </div>
+</div>
+`;

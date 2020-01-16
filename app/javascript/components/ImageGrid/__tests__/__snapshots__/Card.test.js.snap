@@ -1,3 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders all props 1`] = `ShallowWrapper {}`;
+exports[`renders all props 1`] = `
+<div
+  className="col-lg-3 col-md-3 col-sm-6 col-xs-12"
+>
+  <Link
+    to="/image/0"
+  >
+    <div
+      className="card image-grid__card"
+    >
+      <img
+        alt="Test"
+        className="card-img-top img-thumbnail image-grid__img"
+        src="http://localhost"
+      />
+    </div>
+  </Link>
+</div>
+`;
